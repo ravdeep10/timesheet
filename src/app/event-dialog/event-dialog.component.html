@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Event Details</h1>
+<div mat-dialog-content>
+  <p><strong>Title:</strong> {{ data.title }}</p>
+  <p><strong>Date:</strong> {{ data.date }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+  <button mat-raised-button color="primary" (click)="confirmAction()">Confirm</button>
+</div>
+

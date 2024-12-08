@@ -1,0 +1,26 @@
+<div class="timesheet-container">
+  <h1 class="calendar-title">Timesheet Calendar</h1>
+  <full-calendar [options]="calendarOptions"></full-calendar>
+
+  <div class="timesheet-filters">
+    <div class="filter-row">
+      <label for="month-select">Select Month:</label>
+      <select id="month-select" class="filter-select">
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <label>From Date:</label>
+      <input type="date" class="date-input" [(ngModel)]="fromDate" />
+      <label>To Date:</label>
+      <input type="date" class="date-input" [(ngModel)]="toDate" />
+      <button class="filter-button" (click)="getTimesheet()">Get</button>
+    </div>
+  </div>
+
+  <div class="timesheet-summary">
+    <div class="summary-item">Total Hours: <span>{{ totalHours }}</span></div>
+    <div class="summary-item">Billable: <span>{{ billableHours }}</span></div>
+    <div class="summary-item">Non-billable: <span>{{ nonBillableHours }}</span></div>
+  </div>
+</div>
